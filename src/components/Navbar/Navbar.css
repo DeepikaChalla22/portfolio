@@ -1,0 +1,71 @@
+*{
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+    margin-top: 10px;
+    color: white;
+}
+.navbar-parent{
+    font-size: 30px;
+}
+.navbar-links{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    width: 75%;
+}
+
+.home,
+.about-me,
+.resume,
+.contact-me{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+.mobile-menu-icon{
+    display: none;
+}
+@media screen and (max-width:780px){
+    .navbar-links{
+        display: none;
+    }
+    .navbar-links-mobile{
+        position: absolute;
+        display: block;
+        list-style: none;
+        background-color: #25263b;
+        opacity: 0.8;
+        left: 0px;
+        top: 75px;
+        transition: all 0.5s ease-out;
+        width: 100%;
+    }
+    .home,
+    .about-me,
+    .resume,
+    .contact-me{
+        text-align: center;
+        width: 100%;
+        transition: all 0.5s ease;
+    }
+    .mobile-menu-icon{
+        display:contents;
+        font-size: 1.5rem;
+        height: 2rem;
+        justify-self: end;
+        color: #fff;
+        border: none;
+        outline: none;
+    }
+
+}

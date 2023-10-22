@@ -1,0 +1,94 @@
+.t-wrapper {
+    margin-top: 2rem;
+    height: 46.5rem;
+}
+
+.t-title {
+    margin: 0.8rem;
+    
+    text-align: center;
+    padding-bottom: 0.3rem;
+    padding-Top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.t-title-heading {
+    font-family: "Poppins Bold";
+    font-size: 2rem;
+}
+
+.t-title-description {
+    font-size: small;
+    font-family: "Poppins ExtraLight";
+}
+
+.border-image{
+    height: 1.2rem;
+    /* background-image: url(../../assets/Home/design.png); */
+    background-image: "C:\Users\Deepika Sai\OneDrive\Desktop\ethnus_WD\react course\portfolio\src\Assets\Home\design.png";
+    background-size:contain;
+    background-repeat: no-repeat;
+    margin-top: 0.5rem;
+  }
+.testimonial-parent{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+.testimonial{
+    width: 50%;
+    color: grey;
+}
+.testimonial .slick-arrow.slick-prev,
+.testimonial .slick-arrow.slick-next{
+    /* background: #8ecb2f; */
+    color: black;
+    width:2.5rem;
+    height:2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    border-radius: 5;
+}
+.slick-prev::before,
+.slick-prev::after{
+    display: none;
+}
+.testimonial .slick-arrow.slick-next{
+    right: -2rem;
+}
+.testimonial .slick-arrow.slick-prev{
+    left: -2rem;
+}
+.testimonial .slick-dots li button:before{
+    font-size: 1rem;
+}
+.testimonial .avatar{
+    width: 10rem;
+    height: 10rem;
+    border: "1px solid lightgray";
+    padding: 0.5rem;
+    border-radius: 0.1rem;
+    margin-bottom: 1rem;
+}
+.testimonial-img{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.testimonial-img .primary-text{
+    font-weight: 500;
+    color: green;
+}
+.testimonial-img .para{
+    font-style: italic;
+}
+.testimonial-img .name{
+    font-style: italic;
+    margin-top: 1.5rem;
+}
