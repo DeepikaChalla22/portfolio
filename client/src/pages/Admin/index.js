@@ -70,6 +70,7 @@ import AdminEducations from './AdminEducations';
 import AdminProjects from './AdminProjects';
 import AdminActivities from './AdminActivities';
 import AdminContact from './AdminContact';
+import AdminCourses from './AdminCourses';
 
 function Admin() {
     const { portfolioData } = useSelector((state) => state.root);
@@ -102,6 +103,11 @@ function Admin() {
         },
         {
             key: '6',
+            label: 'Achievements',
+            children: <AdminCourses />,
+        },
+        {
+            key: '7',
             label: 'Contact',
             children: <AdminContact />,
         },

@@ -9,6 +9,7 @@ import Contact from './Contact'
 import Footer from './Footer'
 import LeftSider from './LeftSider'
 import { useSelector } from 'react-redux'
+import Course from './Course'
 
 function Home() {
     const { portfolioData } = useSelector((state) => state.root);
@@ -22,6 +23,7 @@ function Home() {
                     <Experiences />
                     <Projects />
                     <AnA />
+                    <Course />
                     <Contact />
                     <Footer />
                     <LeftSider />

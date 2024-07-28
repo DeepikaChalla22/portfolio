@@ -104,6 +104,26 @@ const activitesSchema = new mongoose.Schema({
     },
 });
 
+
+const coursesSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+    image: {
+        type: String,
+        required: true,
+    },
+    link: {
+        type: String,
+        required: true,
+    },
+});
+
 const contactSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -137,6 +157,7 @@ module.exports = {
     Education: mongoose.model("educations", educationSchema),
     Project: mongoose.model("projects", projectsSchema),
     Activity: mongoose.model("activities", activitesSchema),
+    Course: mongoose.model("courses", coursesSchema),
     Contact: mongoose.model("contacts", contactSchema),
 
 }

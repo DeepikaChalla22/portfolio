@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Intro, About, Project, Education, Activity, Contact } = require("../models/portfolioModel");
+const { Intro, About, Project, Education, Activity, Course, Contact } = require("../models/portfolioModel");
 const User = require('../models/userModel');
 
 //get all portfolio data
@@ -11,6 +11,7 @@ router.get(`/get-portfolio-data`, async (req, res) => {
         const projects = await Project.find();
         const educations = await Education.find();
         const activities = await Activity.find();
+        const courses = await Course.find();
         const contacts = await Contact.find();
 
         res.status(200).send({
@@ -20,6 +21,7 @@ router.get(`/get-portfolio-data`, async (req, res) => {
             contact: contacts[0],
             educations: educations,
             activities: activities,
+            courses: courses,
 
         })
     } catch (error) {
@@ -206,6 +208,60 @@ router.post("/delete-activity", async (req, res) => {
         res.status(500).send(error);
     }
 });
+
+// -----------------------------------------
+
+// add activity or achievement
+router.post("/add-course", async (req, res) => {
+    try {
+        const course = new Course(req.body);
+        await course.save();
+        res.status(200).send({
+            data: course,
+            success: true,
+            message: "Achievement data added successfully",
+        });
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
+
+// update activity
+router.post("/update-course", async (req, res) => {
+    try {
+        const course = await Course.findOneAndUpdate(
+            { _id: req.body._id },
+            req.body,
+            { new: true }
+        );
+        res.status(200).send({
+            data: course,
+            success: true,
+            message: "Achievement data updated successfully",
+        });
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
+// delete activity
+
+router.post("/delete-course", async (req, res) => {
+    try {
+        const course = await Course.findOneAndDelete({ _id: req.body._id });
+        res.status(200).send({
+            data: course,
+            success: true,
+            message: "Achievement data deleted successfully",
+        });
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
+
+//----------------------------------------------
 
 // update contact
 router.post("/update-contact", async (req, res) => {
